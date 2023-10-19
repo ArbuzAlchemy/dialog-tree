@@ -1,0 +1,52 @@
+{
+  "name": "@arbuzalchemy/dialog-tree",
+  "version": "1.0.0",
+  "description": "",
+  "private": false,
+  "scripts": {
+    "build": "tsc --p ./tsconfig.json",
+    "prepublishOnly": "yarn build",
+    "prettier": "prettier --write ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArbuzAlchemy/dialog-tree.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArbuzAlchemy/dialog-tree/issues"
+  },
+  "homepage": "https://github.com/ArbuzAlchemy/dialog-tree#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "@arbuzalchemy/common-ui": "^1.0.10",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.14",
+    "@mui/material": "^5.14.14",
+    "mobx": "^6.10.2",
+    "mobx-react-lite": "^4.0.5",
+    "rc-scrollbars": "^1.1.6",
+    "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-hook-form": "^7.47.0"
+  }
+}
