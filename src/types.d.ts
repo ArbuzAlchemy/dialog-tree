@@ -1,3 +1,5 @@
+declare module '*.jpg';
+
 type DialogNode = {
   id: number;
   text: string;

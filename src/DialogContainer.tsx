@@ -9,6 +9,8 @@ import { DialogLine } from "./DialogLine";
 import { DialogOption } from "./DialogOption";
 import { DialogEditForm } from "./DialogEditForm";
 
+import background from "./assets/bg.jpg";
+
 export const DialogContainer = observer(() => {
   const [, drop] = useDrop(() => ({
     accept: "dialog-node",
@@ -28,6 +30,9 @@ export const DialogContainer = observer(() => {
           style={{
             width: dialogStore.canvasWidth,
             height: dialogStore.canvasHeight,
+            backgroundImage: `url(${background})`,
+            backgroundRepeat: "repeat",
+            backgroundPosition: "center",
           }}
         >
           <svg
