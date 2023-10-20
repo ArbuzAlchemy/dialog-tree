@@ -9,7 +9,7 @@ import { DialogLine } from "./DialogLine";
 import { DialogOption } from "./DialogOption";
 import { DialogEditForm } from "./DialogEditForm";
 
-import background from "./assets/bg.jpg";
+import background from "./assets/bg.png";
 
 export const DialogContainer = observer(() => {
   const [, drop] = useDrop(() => ({
