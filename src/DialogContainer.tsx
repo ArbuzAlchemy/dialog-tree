@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { XYCoord, useDrop } from "react-dnd";
 import { observer } from "mobx-react-lite";
 import { Scrollbars } from "rc-scrollbars";
@@ -12,11 +12,14 @@ import { DialogEditForm } from "./DialogEditForm";
 import background from "./assets/bg.png";
 
 export const DialogContainer = observer(() => {
+  const ref = useRef<Scrollbars>(null);
+
   const [, drop] = useDrop(() => ({
     accept: "dialog-node",
     drop(item: DialogNodeProps, monitor) {
+      console.log(ref.current);
       const coords = monitor.getSourceClientOffset() as XYCoord;
-      dialogStore.updateNodeCoords(item.id, { left: coords.x, top: coords.y });
+      dialogStore.updateNodeCoords(item.id, { left: coords.x + ref.current.getScrollLeft(), top: coords.y + ref.current.getScrollTop() });
       return undefined;
     },
   }));
@@ -25,6 +28,7 @@ export const DialogContainer = observer(() => {
   return (
     <>
       <Scrollbars
+        ref={ref}
         style={{ width: "100vw", height: "100vh" }}
         renderThumbHorizontal={(props) => <div {...props} style={{
           ...props.style,
