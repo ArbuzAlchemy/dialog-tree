@@ -26,11 +26,11 @@ export const DialogContainer = observer(() => {
     <>
       <Scrollbars
         style={{ width: "100vw", height: "100vh" }}
-        renderTrackHorizontal={(props) => <div {...props} style={{
+        renderThumbHorizontal={(props) => <div {...props} style={{
           ...props.style,
           backgroundColor: "black",
         }} />}
-        renderTrackVertical={(props) => <div {...props} style={{
+        renderThumbVertical={(props) => <div {...props} style={{
           ...props.style,
           backgroundColor: "black",
         }} />}
