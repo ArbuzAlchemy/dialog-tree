@@ -35,7 +35,7 @@ class DialogStore {
           (node) => node.left + this.calculateNodeWidth(node.id),
         ),
       ) + 300,
-      window.innerWidth,
+      window.innerWidth * 3,
     );
   }
   get canvasHeight() {
@@ -45,7 +45,7 @@ class DialogStore {
           (node) => node.top + this.calculateNodeHeight(node.id),
         ),
       ) + 300,
-      window.innerHeight,
+      window.innerHeight * 3,
     );
   }
   get lexicon() {
