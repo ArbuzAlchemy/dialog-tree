@@ -23,6 +23,7 @@ const Box = styled.div`
   display: inline-block;
   z-index: 1;
   background-color: white;
+  white-space: pre-line;
 `;
 
 const $EditIcon = styled(EditIcon)`
