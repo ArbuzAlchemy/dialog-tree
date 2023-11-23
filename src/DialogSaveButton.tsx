@@ -1,7 +1,14 @@
 import React from "react";
+import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import { useCallback } from "react";
 import { dialogStore } from "./state";
+
+const Wrapper = styled.div`
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+`;
 
 const downloadFile = (content: string, fileName: string) => {
   const a = document.createElement("a");
@@ -11,7 +18,7 @@ const downloadFile = (content: string, fileName: string) => {
   a.click();
 };
 
-export const DialogSaveButton = () => {
+export const DialogSaveButton = ({ className }: { className?: string; }) => {
   const save = useCallback(() => {
     const lexicon = JSON.stringify(dialogStore.lexicon, null, 2);
     downloadFile(lexicon, "dialog.json");
@@ -19,10 +26,10 @@ export const DialogSaveButton = () => {
     downloadFile(json, "data.json");
   }, []);
   return (
-    <div style={{ position: "fixed", right: 10, bottom: 10 }}>
+    <Wrapper className={className}>
       <Button variant="contained" onClick={save}>
         Save
       </Button>
-    </div>
+    </Wrapper>
   );
 };
